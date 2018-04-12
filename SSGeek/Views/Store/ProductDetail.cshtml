@@ -1,0 +1,40 @@
+﻿@using SSGeek.Models
+
+@model Product
+
+
+
+<form method="post" action="@Url.Action("ShoppingCart", "Store")">
+
+    <div style="width: 900px; height: 500px; margin: 15px auto; background-color:#fff; padding-left: 25px" ;>
+
+        <h1 style="text-align: center">Solar System Geek Gift Shop</h1>
+
+        <div class="row">
+
+            @{string imagePath = Path.Combine("/Content/img/",Model.ImageName);}
+            <div style="width:230px;float:left">
+                <a href=" @Url.Action("ProductDetail","Store", new { id = Model.ProductId }, null)">
+                    <img src="@imagePath" alt="Picture of Product" style="width:225px;height:auto"/>
+                </a>
+            </div>
+
+            <div style="width:450px;float:left;padding-left:50px">
+
+                <h3 style="text-align:left">@Model.Name</h3>
+                <h4 style="color:cornflowerblue;text-align:left">$@Model.Price</h4>
+                <h5 style="text-align:left">@Model.Description</h5>
+
+                <p style="margin-bottom:0">Quantity to Buy:</p><br />
+                <input type="number" name="Quantity" />
+                <input type="hidden" name="productId" value="@Model.ProductId" />
+                <input type="submit" value="Add To Cart" />
+               
+
+
+            </div>
+
+        </div>
+
+    </div>
+</form>

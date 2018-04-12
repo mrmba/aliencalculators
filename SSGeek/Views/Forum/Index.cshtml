@@ -1,0 +1,27 @@
+﻿
+@using SSGeek.Models
+
+@model List<ForumPost>
+
+
+<div style="width:1000px; height: auto; margin: 15px auto; background-color:#fff; padding-left: 25px" ;>
+
+    <br /><h1 style="text-align: center">Solar System Geek Forum</h1>
+
+    <a href="/Forum/SubmitPost">
+        <p style="text-align:center"> Post a Message </p>
+    </a>
+
+    <p style="background-color:lawngreen;text-align:center">@Html.Partial("Message")</p>
+
+    <div>
+        @foreach (ForumPost p in Model)
+        {
+            <h3 style="margin-bottom: 2px"> @p.Subject</h3>
+            <p style="margin-top:2px;font-style:italic"> by @p.Username on @p.PostDate.ToShortDateString() at @p.PostDate.ToShortTimeString() </p>
+            <p style="font-size:small"> @p.Message </p><hr />
+        }
+    </div>
+
+
+</div>

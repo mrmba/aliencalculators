@@ -1,0 +1,21 @@
+﻿
+@model SSGeek.Models.ForumPost
+
+
+<form method="post" action="@Url.Action("SubmitPost", "Forum")">
+
+
+    <div style="width:1000px; height: 700px; margin: 15px auto; background-color:#fff; padding-left: 25px" ;>
+
+        <h1 style="text-align: center">New Geek Post</h1> <br />
+
+       Username: <span style="margin-left:115px">@Html.TextBox("Username") </span> <br /><br />
+
+       Subject: <span style="margin-left:135px">@Html.TextBox("Subject") </span> <br /><br />
+
+       Message: <span style="margin-left:123px">@Html.TextArea("Message") </span><br /><br />
+
+       <input type="submit" value="Submit!" id="submitButton" style="margin-left:196px">
+
+    </div>
+</form>

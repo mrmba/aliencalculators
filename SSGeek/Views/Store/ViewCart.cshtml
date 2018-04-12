@@ -1,0 +1,42 @@
+﻿@using SSGeek.Models
+
+@model ShoppingCart
+
+
+<div style="width: 950px; height: auto; margin: 15px auto; background-color:#fff; padding-left: 25px">
+
+    <h1 style="text-align:center;padding-top:20px">Solar System Geek Gift Shop</h1>
+    <br />
+
+    <h3 style="font-style:italic;text-align:center;text-decoration:underline">Your Shopping Cart</h3>
+
+    <table>
+        <tr>
+            <th style="width:15%"></th>
+            <th style="width:55%;color:black;text-align:left"><b>Name</b></th>
+            <th style="width:10%;color:black;text-align:left"><b>Price</b></th>
+            <th style="width:10%;color:black;text-align:left"><b>Qty.</b></th>
+            <th style="width:10%;color:black;text-align:left"><b>Total</b></th>
+        </tr>
+
+        @foreach (ShoppingCartItem item in Model.Items)
+        {
+            <tr>
+                <td> <img src="~/Content/img/@item.Product.ImageName" style="width:175px;height:175px" /> </td>
+                <td style="color:black">@item.Product.Name</td>
+                <td style="color:black">@item.Product.Price.ToString("C")</td>
+                <td style="color:black">@item.Quantity</td>
+                <td style="color:black">@item.TotalCostPerProduct.ToString("C")</td>
+            </tr>
+        }
+
+    </table>
+
+    <p style="text-align:right;font-weight:bold;padding: 0px 45px 35px 50px">GRAND TOTAL: @Model.GetTotalCost().ToString("C")</p>
+
+    <a href="@Url.Action("CheckOut", "Store")">
+        <p style="text-align:right;padding: 5px 45px 35px 50px">Check Out</p>
+        </a>
+
+
+</div>

@@ -1,0 +1,4 @@
+﻿@model SSGeek.Models.AlienTravelModel
+<div style="width:1000px; height: 700px; margin: 15px auto; background-color:#fff; padding-left: 25px" ;>
+    <h2>Traveling by @Model.TransportSelection you will reach @Model.PlanetSelection in @Model.GetTravelYears(Model.PlanetSelection, Model.TransportSelection, Model.EarthAge) years. You will be @Model.UserTravelAge(Model.AlienTravelYears, Model.EarthAge) years old.</h2>
+ </div>

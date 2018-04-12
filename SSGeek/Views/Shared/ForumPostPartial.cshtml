@@ -1,0 +1,12 @@
+﻿
+@using SSGeek.Models
+
+@model SSGeek.Models.ForumPost
+
+
+@{ var post = Model; }
+
+<div class="well">
+    <span style="width: 100px; float: left;">@post.PostDate.ToShortDateString()</span>
+    <span style="float: left;">@post.PostText</span>
+</div>

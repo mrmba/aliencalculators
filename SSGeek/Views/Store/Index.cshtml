@@ -1,0 +1,31 @@
+﻿
+@using SSGeek.Models
+@model List<Product>
+
+
+
+<form method="get" action="@Url.Action("ProductDetail", "Store")">
+
+    <div style="width: 900px; height: 700px; margin: 15px auto; background-color:#fff; padding-left: 25px" ;>
+
+        <h1 style="text-align: center">Solar System Geek Gift Shop</h1>
+
+        @foreach (Product p in Model)
+        {
+        <div style="width: 700px; padding-bottom: 35px">
+            <a href="@Url.Action("ProductDetail", "Store", new { id = p.ProductId }, null)">
+                <img src="~/Content/img/@p.ImageName" align="left" style="width: 150px; height: auto; padding-right: 30px" />
+            </a>
+                <ul style="list-style-type: none">
+                    <li>
+                        <b>@p.Name</b>
+                    </li>
+                    <li>
+                        <b style="color: cornflowerblue">$@p.Price</b>
+                    </li>
+                </ul>
+        </div>
+        }
+
+    </div>
+</form>

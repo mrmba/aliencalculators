@@ -1,0 +1,27 @@
+﻿
+@model SSGeek.Models.AlienWeightModel 
+
+
+<form method="get" action="@Url.Action("AlienWeightResult", "Calculators")">
+
+    <div style="width:1000px; height: 700px; margin: 15px auto; background-color:#fff; padding-left: 25px";>
+       
+        <h1 style="text-align: center">Alien Weight Calculator</h1>
+   <p></p>
+        Choose a planet: <select name="PlanetSelection" style="margin-left: 100px">
+
+            <option>Mercury</option>
+            <option>Venus</option>
+            <option>Mars</option>
+            <option>Jupiter</option>
+            <option>Saturn</option>
+            <option>Neptune</option>
+            <option>Uranus</option>
+
+        </select>
+        <p></p>
+        Enter your Earth weight: <span style="margin-left: 50px"> @Html.TextBoxFor(m => m.EarthWeight) </span><br />
+        <p></p>
+        <input type="submit" value="Calculate Weight" name="Calculate Weight" style="margin-left: 225px"/>
+    </div>
+</form>
